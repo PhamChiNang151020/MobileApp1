@@ -1,7 +1,7 @@
 import React from "react";
 import{StyleSheet, view, Text, TouchableOpacity, View} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-
+import styles from "./Styles1"
 
 export default class vnexpress2 extends React.Component{
     constructor(props) {
@@ -29,24 +29,3 @@ export default class vnexpress2 extends React.Component{
         }
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center"
-
-    },
-    title:{
-        fontSize: 30,
-        textAlign:"center",
-        color: "#000"
-
-    },
-    text:{
-        fontSize:20,
-        color:"#000",
-        textAlign:"center"
-    }
-
-})

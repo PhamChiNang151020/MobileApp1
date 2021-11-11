@@ -5,20 +5,18 @@ import {
     SafeAreaView,
     TouchableOpacity
 } from 'react-native'
+import styles from "./Styles1"
 
 export default Account = () => {
-    return(
-        <SafeAreaView style={{height: '100%', width: '100%', backgroundColor: '#fca788'}}>
-          <View style={{height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center'}}>
-            <View style={{height: '50%', width: '100%', justifyContent: 'center', alignItems: 'center'}}>
-              <Text style={{fontSize: 20, color: 'red'}}>
-                Page Account
-              </Text>
-              <Text style={{fontSize: 16}}>
-                Link: Account.html
-              </Text>
-            </View>
-          </View>   
-        </SafeAreaView>
-    )
+  return(
+    <View style={styles.container}>
+        <Text style={styles.title}>
+            Account
+        </Text>
+        <Text style={styles.text}>
+            Link:  . . .
+        </Text>
+
+    </View>
+);
 }

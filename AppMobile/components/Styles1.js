@@ -44,6 +44,8 @@ const styles = StyleSheet.create({
         borderWidth: 2, 
         justifyContent: 'center', 
         alignItems: 'center',
+        marginBottom:30,
+        marginTop: 30,
     },
 });
 export default styles;
