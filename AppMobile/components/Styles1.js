@@ -1,41 +1,49 @@
 import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
+        flexDirection: 'column',
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#e0dfdb',
+        backgroundColor: '#999999',
     },
     title: {
+        //backgroundColor:'red',
         fontSize: 30, 
         fontWeight: "bold",
         textAlign: 'center'
     },
     link: {
+        //backgroundColor:'green',
         fontSize: 18, 
         marginTop: 10, 
         textAlign: 'center'
     },
     btn:{
         marginTop: 40,
-        //backgroundColor: '#22aed1',
-        height: 40,
+        height: 30,
         width: 200,
     },
     txt:{
-        height: 50,
+        //backgroundColor:'blue',
+        height: 30,
         borderRadius: 8,
         alignItems: 'center',
         justifyContent: 'center',
-        flex: 1,
         fontSize: 18, 
-        color: '#3bacce', 
+        color: 'blue', 
         textAlign: 'center'
     },
-    tab_menu:{
-        height: 40,
-        width: '100%',
-        backgroundColor: 'yellow',
+    text:{
+        fontSize: 18,
+    },
+    logo:{
+        height: 150, 
+        width: 150, 
+        borderRadius: 150,
+        borderWidth: 2, 
+        justifyContent: 'center', 
+        alignItems: 'center',
     },
 });
 export default styles;

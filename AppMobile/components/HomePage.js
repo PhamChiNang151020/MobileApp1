@@ -6,30 +6,29 @@ import {
     TouchableOpacity
 } from 'react-native'
 // import Tabs from './MennuBar'
+import styles from "./Styles1"
 
 
 export default HomePage = ({ navigation }) => {
-    return(
-        <SafeAreaView style={{height: '100%', width: '100%', backgroundColor: '#baffec'}}>
-          <View style={{height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center'}}>
-            <View style={{height: '50%', width: '100%', justifyContent: 'center', alignItems: 'center'}}>
-              <Text style={{fontSize: 18, color: 'red'}}>
-                Webview - Homepage
-              </Text>
-              <Text style={{fontSize: 16}}>
-                Link: home-page.html
-              </Text>
-            </View>
-            <View style={{height: '50%', width: '100%', justifyContent: 'flex-start', alignItems: 'center'}}>
-              <TouchableOpacity onPress = {() => {
-                navigation.navigate("Page1");
-                }}>
-                  <Text style={{fontSize: 16}}>
-                      Touch go to page 1
-                  </Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </SafeAreaView>
-    )
+  return(
+    <View style={styles.container}>
+      <View>
+        <Text style={styles.title}>
+          Webview - HomePage
+        </Text>
+        <Text style={styles.link}>
+          Link: page1.html
+        </Text>
+      </View>
+      <View style={styles.btn}>
+        <TouchableOpacity onPress = {() => {
+          navigation.navigate("Page1");
+          }}>
+            <Text style={styles.txt}>
+                Touch go to Page1
+            </Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  )
 }

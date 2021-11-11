@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Text, Image, TouchableOpacity, Button} from 'react-native';
+import {StyleSheet, View, Text, Image, TouchableOpacity,SafeAreaView, Button} from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { NavigationContainer } from '@react-navigation/native';
 // Add icon
@@ -10,33 +10,27 @@ import Material from 'react-native-vector-icons/MaterialCommunityIcons'
 import styles from "./Styles1"
 
 
-export default class Page3 extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          page3: false,
-        };
-    }
-    render() {
-        if (this.state.page3) {
-          return <App />;
-        } else {
-          return (
-            <View style={styles.container}>
-                <Text style={styles.title}>
-                    WebView - Page 3
-                </Text>
-                <Text style={styles.link}>
-                    link: page1.html 
-                </Text>
-                <TouchableOpacity style={styles.btn} onPress = {() => {
-                    this.props.navigation.navigate("HomePage");}}>
-                    <Text  style={styles.txt}>
-                        Touch to go HomePage
-                    </Text>
-        </TouchableOpacity> 
-            </View>
-          );
-        }
-      }
+export default Page3 = ({ navigation }) => {
+  
+  return(
+    <View style={styles.container}>
+      <View>
+        <Text style={styles.title}>
+          Webview - Page3
+        </Text>
+        <Text style={styles.link}>
+          Link: page1.html
+        </Text>
+      </View>
+      <View style={styles.btn}>
+        <TouchableOpacity onPress = {() => {
+          navigation.navigate("Home");
+          }}>
+            <Text style={styles.txt}>
+                Touch go to HomePage
+            </Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  )
 }

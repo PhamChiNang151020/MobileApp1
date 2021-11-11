@@ -3,6 +3,7 @@ import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { NavigationContainer } from '@react-navigation/native';
 import Screen1 from './logo'
+import styles from "./Styles_intro"
 
 
 export default class IntroComponent extends React.Component {
@@ -14,34 +15,42 @@ export default class IntroComponent extends React.Component {
   }
   _renderItem = ({item}) => {
     return (
-      <View style={{flex: 1, alignItems:'center', backgroundColor: 'pink'}}>
-        <View style={{height: '50%', width: '100%', justifyContent:'center', alignItems:'center'}}>
-            <View  style={styles.circle}>
-                <Text style={styles.textin}>{item.textin}</Text>
-            </View>
-            <Text style={styles.title}>{item.title}</Text>
-        </View>
-        <View style={{height: '20%', width: '100%'}}>
-            <Text style={styles.text}>{item.text}</Text>
-        </View>
+      <View style={styles.container}>
+      <View  style={styles.circle}>
+          <Text style={styles.text_in_circle}>{item.text_in_circle}</Text>
       </View>
+      <Text style={styles.title}>{item.title}</Text>
+      <View style={{height: '20%', width: '100%'}}>
+      <Text style={styles.text}>{item.text}</Text>
+  </View>
+  </View>
     );
   };
   _renderNextButton = () => {
     return (
-      <View style={styles.buttonCircle}>
-          <Text style={{fontSize: 18, color: 'black'}}>Next</Text>
+      <View style={styles.next_button}>
+        <View style={styles.buttonCircle}>
+        <Text style={{fontSize: 18, color: 'black'}}>
+          Next
+        </Text>
+        </View>
       </View>
+      
     );
   };
   _renderDoneButton = () => {
     return (
+      <View style={styles.done_button}>
         <TouchableOpacity style={styles.buttonCircle} onPress = {() => {
-            this.props.navigation.navigate("Screen1");
-            this.setState({isBottomShert: true});
-            }}>
-            <Text  style={{fontSize: 18, color: 'black'}}>Start</Text>
-        </TouchableOpacity> 
+          this.props.navigation.navigate("Screen1");
+          this.setState({isBottomShert: true});
+          }}>
+          <Text  style={{fontSize: 18, color: 'black'}}>
+            Start
+          </Text>
+    </TouchableOpacity> 
+      </View>
+
     );
   };
 
@@ -63,53 +72,30 @@ export default class IntroComponent extends React.Component {
     }
   }
 }
-const styles = StyleSheet.create({
-    title: {fontSize: 20, marginTop: 20, textAlign: 'center'},
-    text: {fontSize: 18, marginTop: 30, textAlign: 'center'},
-    textin:{fontSize: 20, textAlign: 'center'},
-    circle: {
-      height: 200,
-      width: 200,
-      borderRadius: 200,
-      borderWidth: 2,
-      justifyContent: 'center',
-      alignItems: 'center',
-      textAlign: 'center'
-    },
-    buttonCircle: {
-      height: 50,
-      borderRadius: 8,
-      borderColor: 'black',
-      borderWidth: 2,
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: '#d4d4d4',
-      flex: 1
-    }
-  });
+
   const slides = [
     {
       key: 'one',
       title: 'EXCLUSIVELY\nON xxxx',
       text: 'Enter you phone number to continue',
-      textin: 'H',
+      text_in_circle: 'H',
     },
     {
       key: 'two',
       title: 'ALLOW PUSH\nNOTIFICATION?',
       text: 'xxxxxx',
-      textin: 'Push Notification',
+      text_in_circle: 'Push Notification',
     },
     {
       key: 'three',
       title: 'ALLOW PUSH\nNOTIFICATION?',
       text: 'Grant the "Alway in use" permission\n will allow us access to you background',
-      textin: 'Location',
+      text_in_circle: 'Location',
     },
     {
       key: 'four',
       title: 'READY TO\n START?',
       text: 'Grant the "Alway in use" permission\n will allow us access to you background',
-      textin: 'Ready',
+      text_in_circle: 'Ready',
     },
   ];
